@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CoroutineTest</string>
+    <string name="content">这是以个将要编辑的内容呵呵</string>
+</resources>
