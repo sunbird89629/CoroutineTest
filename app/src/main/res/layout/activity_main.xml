@@ -18,7 +18,7 @@
     <TextView
         android:id="@+id/tv_content"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="200dp"
         android:layout_centerVertical="true"
         android:layout_marginTop="20dp"
         android:text="@string/content"
@@ -39,11 +39,20 @@
             android:textSize="20sp" />
 
         <Button
+            android:id="@+id/btn_edit_by_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Register方式编辑"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <Button
             android:id="@+id/btn_edit_by_coroutine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="10dp"
-            android:text="协成方式编辑"
+            android:text="协程方式编辑"
             android:textSize="20sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </RelativeLayout>

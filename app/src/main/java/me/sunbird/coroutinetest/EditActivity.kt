@@ -14,6 +14,13 @@ class EditActivity : AppCompatActivity() {
         const val ARG_TAG_CONTENT = "content"
         const val RESULT_TAG_NEW_CONTENT = "new_content"
 
+
+        /**
+         * 对指定的文本进行编辑
+         * @param content 要编辑的文本
+         *
+         * @return 可空  不为null 表示编辑后的内容  为null表示用户取消了编辑
+         */
         @JvmStatic
         suspend fun editContent(activity: FragmentActivity, content: String): String? =
             suspendCoroutine { continuation ->
@@ -27,7 +34,10 @@ class EditActivity : AppCompatActivity() {
                         if (resultCode == RESULT_OK && data != null) {
                             val result = data.getStringExtra(RESULT_TAG_NEW_CONTENT)
                             continuation.resume(result)
+                        } else {
+                            continuation.resume(null)
                         }
+                        removeFromActivity(activity.supportFragmentManager)
                     }
                 }
                 editFragment.addToActivity(activity.supportFragmentManager)
